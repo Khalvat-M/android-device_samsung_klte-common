@@ -1,22 +1,3 @@
-allow vold efs_file:dir rw_dir_perms;
-allow vold efs_file:file create;
-
-# For setting read_ahead_kb
-allow vold sysfs_mmc_host:file w_file_perms;
-
-allow vold {
-    block_device
-    cache_block_device
-    efs_block_device
-    system_block_device
-}:blk_file getattr;
-
-allowxperm vold vold_device:blk_file ioctl 0x1271;
-allowxperm vold vold_device:blk_file ioctl BLKROGET;
-
-dontaudit vold hal_bootctl_hwservice:hwservice_manager find;
-
-# Allow loading keymaster firmware
-allow vold firmware_file:dir search;
-allow vold firmware_file:file r_file_perms;
-allow vold firmware_file:lnk_file read;
+allow vold sysfs_mmc_host:file write;
+allow vold hal_bootctl_hwservice:hwservice_manager find;
+allow vold rootfs:dir setattr;

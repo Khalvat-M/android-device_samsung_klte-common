@@ -1,3 +1,6 @@
-allow init efs_file:dir mounton;
-allow init proc_last_kmsg:file { r_file_perms setattr };
-allow init sysfs_fingerprint:file setattr;
+binder_call(init, hwservicemanager)
+allow init hal_drm_hwservice:hwservice_manager { add find };
+allow init hidl_base_hwservice:hwservice_manager add;
+allow init hwservicemanager:binder transfer;
+allow init proc:file setattr;
+allow init vendor_file:file execute_no_trans;

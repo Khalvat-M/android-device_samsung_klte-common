@@ -1,1 +1,2 @@
-allow platform_app radio_data_file:dir getattr;
+get_prop(platform_app, exported_audio_prop)
+

@@ -1,7 +1,7 @@
-r_dir_file(hal_fingerprint_default, firmware_file)
-
-allow hal_fingerprint_default fingerprintd_data_file:dir w_dir_perms;
-allow hal_fingerprint_default tee_device:chr_file rw_file_perms;
-allow hal_fingerprint_default vfsspi_data_file:dir rw_dir_perms;
-allow hal_fingerprint_default vfsspi_data_file:file create_file_perms;
-allow hal_fingerprint_default vfsspi_device:chr_file rw_file_perms;
+allow hal_fingerprint_default device:chr_file { ioctl open read write };
+allow hal_fingerprint_default firmware_file:file { getattr open read };
+allow hal_fingerprint_default firmware_file:dir search;
+allow hal_fingerprint_default system_data_file:dir { write add_name read remove_name open };
+allow hal_fingerprint_default system_data_file:file { getattr ioctl lock open read write create unlink};
+allow hal_fingerprint_default tee_device:chr_file { ioctl open read write };
+allow hal_fingerprint_default fingerprintd_data_file:dir write;

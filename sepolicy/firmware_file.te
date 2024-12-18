@@ -1,0 +1,2 @@
+allow firmware_file labeledfs:filesystem associate;
+

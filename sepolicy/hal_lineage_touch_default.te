@@ -1,11 +1,1 @@
-allow hal_lineage_touch_default {
-    sysfs_sec_epen
-    sysfs_sec_tsp
-    sysfs_sec_touchkey
-}:dir search;
-
-allow hal_lineage_touch_default {
-    sysfs_sec_epen
-    sysfs_sec_tsp
-    sysfs_sec_touchkey
-}:file rw_file_perms;
+allow hal_lineage_touch_default sysfs:file { getattr open read write };

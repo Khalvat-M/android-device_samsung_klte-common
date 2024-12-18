@@ -1,0 +1,1 @@
+allow servicemanager vendor_init:binder transfer;

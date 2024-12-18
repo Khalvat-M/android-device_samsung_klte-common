@@ -1,2 +1,1 @@
 allow thermal-engine sysfs_batteryinfo:dir search;
-allow thermal-engine self:capability chown;

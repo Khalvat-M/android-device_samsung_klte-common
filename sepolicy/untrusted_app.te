@@ -1,0 +1,4 @@
+get_prop(untrusted_app, exported_camera_prop)
+allow untrusted_app proc_version:file { read open };
+allow untrusted_app proc_zoneinfo:file { read open };
+

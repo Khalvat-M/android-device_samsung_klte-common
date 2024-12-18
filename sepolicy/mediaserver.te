@@ -1,4 +1,4 @@
-allow mediaserver sysfs_camera:dir search;
-allow mediaserver sysfs_camera:file r_file_perms;
+set_prop(mediaserver, system_prop)
+get_prop(mediaserver, exported_camera_prop)
+allow mediaserver system_data_root_file:sock_file write;
 allow mediaserver vendor_file:file execmod;
-allow mediaserver exported_camera_prop:file r_file_perms;
